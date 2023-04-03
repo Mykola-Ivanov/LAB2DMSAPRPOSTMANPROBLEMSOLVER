@@ -18,7 +18,12 @@ public class PathChecker {
                     path.get(current_gap_index).endVertex,
                     path.get(current_gap_index+1).beginVertex);
             path = insertPath(path,link,current_gap_index);
-        };
+        }
+
+        ArrayList<Edge> link = shortestPath(
+                path.get(path.size()-1).endVertex,
+                path.get(0).beginVertex);
+        path.addAll(link);
 
         return path;
     }
